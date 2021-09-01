@@ -39,8 +39,7 @@ class RollsHistory {
       final res = const CsvToListConverter().convert(contents);
       return res;
     } catch (e) {
-      // If encountering an error, return 0
-      return [[]];
+      return [];
     }
   }
 
@@ -1431,6 +1430,7 @@ Widget displayHistoryData(history) {
     );
   } else {
     List<Widget> children = [];
+    print(history.length);
     for (int i = history.length - 1; i >= 0; i -= 1) {
       Widget newHistoryBar = Container(
         height: 60,
